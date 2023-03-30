@@ -1,20 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { styles } from '@src/commonStyles';
+import { RegistrationScreen } from './src/Screens/RegistrationScreen';
+// import * as Asdf from 'react-native-google-fonts';
+
+// async function loadFontsAsync() {
+//   await loadFonts({
+//     'Roboto-Regular': {
+//       weights: [400],
+//     },
+//     Montserrat: {
+//       weights: [400, 500, 700],
+//     },
+//   });
+// }
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <RegistrationScreen />
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
