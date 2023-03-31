@@ -26,6 +26,16 @@ export const RegistrationScreen = () => {
             value={login}
             onChangeText={(text) => setLogin(text)}
           />
+          <TextInput style={styles.input}
+            placeholder='Email'
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          />
+          <TextInput style={styles.input}
+            placeholder='Password'
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+          />
           <Button title={"Register"}
             style={styles.mainButton}
             onPress={onRegister} />
