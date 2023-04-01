@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import {
   View, Text, TextInput,
   KeyboardAvoidingView, TouchableWithoutFeedback,
-  Keyboard, Platform, TouchableOpacity, Button, ImageBackground
+  Keyboard, Platform, TouchableHighlight, Button, ImageBackground, Dimensions
 } from 'react-native'
-import { styles } from '@src/commonStyles';
-
+import { css, palette } from '@src/commonStyles';
+import Icon from "react-native-vector-icons/AntDesign"
 
 export const RegistrationScreen = () => {
   const [login, setLogin] = useState()
@@ -17,35 +17,68 @@ export const RegistrationScreen = () => {
   }
 
   return (
-    <View style={styles.container} >
+    <View style={css.container} >
       <ImageBackground source={require('@src/../assets/pics/registerBg.jpg')}
-        resizeMode="cover" style={{ flex: 1, justifyContent: 'center', }}
+        resizeMode="cover"
+        style={css.imageBackground}
       >
-
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} >
-            <Text style={styles.title} >Registration</Text>
-            <TextInput style={styles.input}
-              placeholder='Login'
-              value={login}
-              onChangeText={(text) => setLogin(text)}
-            />
-            <TextInput style={styles.input}
-              placeholder='Email'
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-            />
-            <TextInput style={styles.input}
-              placeholder='Password'
-              value={password}
-              onChangeText={(text) => setPassword(text)}
-            />
-            <Button title={"Register"}
-              style={styles.mainButton}
-              onPress={onRegister} />
-          </KeyboardAvoidingView>
-        </TouchableWithoutFeedback>
+          <View style={{
+            borderTopLeftRadius: 25,
+            borderTopRightRadius: 25,
+            backgroundColor: palette.paper,
+            paddingTop: 92,
 
+            position: 'relative'
+          }}>
+            <View
+              style={{
+                width: 120,
+                height: 120,
+                borderRadius: 15,
+                backgroundColor: palette.inputPaperBorder,
+
+                position: 'absolute',
+                top: -60,
+                left: "50%",
+                transform: [{ translateX: -60 }]
+              }}>
+
+                <Icon name="pluscircleo" color={palette.accent}
+                size={25}
+                style={{
+                  position: 'absolute',
+                  bottom: 20,
+                  right: 0,
+                  transform: [{ translateX: 12 }]
+                }}
+                 />
+            </View>
+            <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} >
+              <Text style={css.title} >Registration</Text>
+              <TextInput style={css.input}
+                placeholder='Login'
+                value={login}
+                onChangeText={(text) => setLogin(text)}
+              />
+              <TextInput style={css.input}
+                placeholder='Email'
+                value={email}
+                onChangeText={(text) => setEmail(text)}
+              />
+              <TextInput style={css.input}
+                placeholder='Password'
+                value={password}
+                onChangeText={(text) => setPassword(text)}
+              />
+              <TouchableHighlight
+                style={css.mainButton}
+                onPress={onRegister} >
+                <Text style={{ textAlign: 'center' }}>Register</Text>
+              </TouchableHighlight>
+            </KeyboardAvoidingView>
+          </View>
+        </TouchableWithoutFeedback>
       </ImageBackground>
     </View>
   )

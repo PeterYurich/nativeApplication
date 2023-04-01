@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
-import { styles } from '@src/commonStyles';
+import { css } from './src/commonStyles';
 import { RegistrationScreen } from './src/Screens/RegistrationScreen';
 import { loadFontsAsync } from './src/Screens/utils/loadFonts';
 
@@ -31,8 +31,8 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>
-      <Text >
+    <View style={css.container}>
+      <Text>
           <RegistrationScreen />
           <StatusBar style="auto" />
       </Text>

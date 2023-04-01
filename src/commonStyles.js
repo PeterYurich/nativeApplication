@@ -1,6 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const palette = {
+  paper: '#fff',
+  accent: '#FF6C00',
+  inputPaper: '#F6F6F6',
+  inputPaperBorder: '#E8E8E8',
+  
+}
+
+export const css = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -8,13 +16,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    backgroundColor: '#F6F6F6',
+    backgroundColor: palette.inputPaper,
     width: 343,
     height: 50,
     borderRadius: 8,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#E8E8E8',
+    borderColor: palette.inputPaperBorder,
     marginBottom: 16,
   },
   title: {
@@ -25,9 +33,18 @@ export const styles = StyleSheet.create({
   },
   mainButton: {
     width: '100%',
-    backgroundColor: '#FF6C00',
+    backgroundColor: palette.accent,
     borderRadius: 100,
     textDecoration: 'capitalize',
-    
-  }
+    padding: 16,
+
+  },
+  imageBackground: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+  },
+
+
 });
