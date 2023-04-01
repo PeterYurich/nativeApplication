@@ -5,7 +5,7 @@ export async function loadFontsAsync() {
     'Roboto-Regular': {
       uri: 'https://fonts.google.com/download?family=Roboto',
     },
-    'Alkatra-Regular': require('@src/assets/fonts/alkatra/Alkatra-Regular.ttf'),
-    'Alkatra-Bold': require('@src/assets/fonts/alkatra/Alkatra-Bold.ttf'),
+    'Alkatra-Regular': require('@src/../assets/fonts/alkatra/Alkatra-Regular.ttf'),
+    'Alkatra-Bold': require('@src/../assets/fonts/alkatra/Alkatra-Bold.ttf'),
   });
 }
