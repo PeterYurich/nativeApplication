@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
   },
   title: {
+    fontFamily: "Alkatra-Regular",
     textAlign: 'center',
     fontSize: 30,
     marginBottom: 33,
